@@ -8,4 +8,3 @@ elif m<60 or e<60:
     print('要加油')
 else:
     print('')
-
