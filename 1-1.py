@@ -3,6 +3,8 @@ c=0
 a['out']=0
 y=list()
 g=0
+f=0
+m=0
 while True :
     print('1.設定')
     print('2進貨')
@@ -33,7 +35,7 @@ while True :
             f=f+out
         else:
             print('要付',out*m,'元','剩',a['s']-out,'顆')
-            a['out']=out
+            a['out']=num-out
             f=out
         c=c+1
         y.append(out)
@@ -45,15 +47,21 @@ while True :
         print('營業額',f*m,'元')
     if b == 5 :
         print('剩',a['out'],'顆')
+    if b == 6 :
+        break
 fo=open('myfile.txt','w')
-fo.write('共賣',f,'顆')
-
-fo=open('myfile.txt','r')
+fo.write(str('共賣'))
+fo.write(str(f))
+fo.write(str('顆\n'))
 
 fo=open('myfile.txt','a')
-fo.write('營業額',f*m,'元')
-fo.write('剩',a['out'],'顆')
-
+fo.write(str('營業額'))
+fo.write(str(f*m))
+fo.write(str('元\n'))
+fo=open('myfile.txt','a')
+fo.write(str('剩'))
+fo.write(str(a['out']))
+fo.write(str('顆'))
 fo.close()
 
 import os.path
